@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: catalog-studio-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    healthCheckPath: /health
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        sync: false
+      - key: DATABASE_PATH
+        value: /var/data/catalog.db
+      - key: PROJECT_TITLE
+        value: Catalog Studio
+      - key: PROJECT_DESCRIPTION
+        value: Приватная панель создания товарных объявлений.
+      - key: DEFAULT_CURRENCY
+        value: CHF
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: SUPPORT_USERNAME
+        sync: false
+      - key: COMMUNITY_URL
+        sync: false
+      - key: PROJECT_IMAGE_FILE_ID
+        sync: false
