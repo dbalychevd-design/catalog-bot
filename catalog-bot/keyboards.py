@@ -24,7 +24,7 @@ def main_menu(user: User) -> InlineKeyboardMarkup:
     builder.button(text="🕊 Настройки", callback_data="settings:open")
     builder.button(text="Информация 🕊", callback_data="info:open")
     if user.is_admin:
-        builder.button(text="🛠 Админ-панель", callback_data="admin:open")
+        builder.button(text="🛠 Админ панель", callback_data="admin:open")
         builder.adjust(1, 2, 2, 1)
     else:
         builder.adjust(1, 2, 2)
